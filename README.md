@@ -1,3 +1,3 @@
 # Code zur LV Spezialisierung Web Development
-im Somemrsemester 2026
+im Sommersemester 2026
 
