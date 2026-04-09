@@ -1,0 +1,58 @@
+$color: lightgrey;
+$size: 12;
+
+@mixin border {
+  border: 1px dashed;
+  padding: 1em;
+}
+
+
+body{
+    background-color: $color;
+}
+
+h1{
+    color: $color;
+}
+
+button{
+    width: #{$size*2}px;
+    padding: #{$size}px;
+}
+
+.unterbox{
+    & .box{
+        background-color: lightblue;
+    }
+    & .box2{
+        @include border;
+        background-color: lightcoral;
+    }
+}
+
+.unterbox{
+    &.box{
+        @include  border;
+        background-color: lightgreen;
+    }
+}
+
+$sizes: 10, 20, 50, 100;
+
+@each $size in $sizes {
+  .div-#{$size} {
+    height: #{$size}px;
+    width: #{$size}px;
+  }
+}
+
+$paddings: 2, 4,6,8,99;
+@each $padding in $paddings{
+    .p-#{$padding}{
+        padding: #{$padding}px;
+    }
+}
+
+.color-red{
+    background-color: red;
+}
