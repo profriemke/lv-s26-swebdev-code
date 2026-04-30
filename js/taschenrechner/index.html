@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 id="headline">Überschrift</h1>
+    <input type="text" name="summand1" id="summand1" size="2"> +
+    <input type="text" name="summand2" id="summand2" size="2">
+    <input type="submit" value="=" onclick="add()">
+    <span id="ergebnis">0</span>
+    
+    <script>
+    const summand1 = document.getElementById('summand1')
+    const summand2 = document.getElementById('summand2')
+    const ergebnis = document.getElementById('ergebnis')
+    
+    // console.log(document.getElementsByTagName('body')[0].innerText)
+    
+    function add(){
+
+        let summe = parseInt(summand1.value) + parseInt(summand2.value)
+        console.log('Hallo', ergebnis.innerText)
+        ergebnis.innerText = summe
+
+        // const headline = document.getElementById('headline')
+        // console.log(headline.innerText)
+
+        // console.log(document.getElementById('headline').innerText)
+    }
+
+    </script>
+</body>
+</html>

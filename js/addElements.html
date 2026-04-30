@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="addElement()">hinzufügen</button>
+    <button onclick="deleteContainer()">container weg</button>
+    <button onclick="containerGreen()">Farbe!</button>
+    <button onclick="containerRed()">Farbe!</button>
+    <button onclick="containerPosition()">woanders!</button>
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById('container')
+
+        function addElement() {
+            let newElement = document.createElement('div')
+            newElement.innerText = 'ich bin neu'
+            container.appendChild(newElement)
+        }
+        function deleteContainer() {
+            container.remove()
+        }
+        function containerGreen() {
+            container.style.backgroundColor = 'green'
+        }
+        function containerRed() {
+            container.style.backgroundColor = 'red'
+        }
+        function containerPosition(){
+            container.style.position='absolute'
+            container.style.bottom = '100px';
+        }
+    </script>
+
+</body>
+
+</html>
