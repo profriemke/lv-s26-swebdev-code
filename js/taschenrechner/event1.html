@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="content" id="1">1</div>
+        <div class="content" id="2">2</div>
+        <div class="content" id="3">3</div>
+        <div class="content" id="4">4</div>
+    </div>
+    <button id="knoepfle">Button</button>
+
+    <script>
+        let count = 0;
+        const knoepfle = document.getElementById('knoepfle')
+        knoepfle.addEventListener('click', () => {
+            count++
+            console.log('Knopf!', count)
+        })
+        window.addEventListener('keydown', (e) => {
+            console.log('Taste:', e.key)
+        })
+
+        let elem = document.getElementById("container");
+        elem.addEventListener("click", (e) => {
+            console.log('Klick Zahl:', e.target.id);
+        });
+    </script>
+
+</body>
+
+</html>

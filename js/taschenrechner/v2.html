@@ -113,6 +113,66 @@
             </div>
         </div>
     </div>
+    <script>
+        const tastatur = document.getElementById('tastatur')
+        const ergebnis = document.getElementById('ergebnis')
+        let state = 'firstNumber'
+        let firstNumber = 0
+        let secondNumber = 0
+        let result = 0
+        let operation = ''
+
+        tastatur.addEventListener('click', (e) => {
+            let id = e.target.id
+            if (isNaN(parseInt(id))) {
+                // irgendwas
+                console.log('keine Zahl')
+                if (state == 'operation' && id != 'gleich') {
+                    console.log('state: operation nicht gleich')
+                    operation = id
+                    state = 'secondNumber'
+                    console.log('State:', state)
+                }
+                if (state == 'result' && id == 'gleich') {
+                    if (operation == 'mal') {
+                        result = firstNumber * secondNumber
+                    }
+                    if (operation == 'geteilt') {
+                        result = firstNumber / secondNumber
+                    }
+                    if (operation == 'plus') {
+                        result = firstNumber + secondNumber
+                    }
+                    if (operation == 'minus') {
+                        result = firstNumber - secondNumber
+                    }
+                    ergebnis.innerText = result
+                    state = 'firstNumber'
+                    firstNumber = 0
+                    seconNumber = 0
+                }
+            } else {
+                // Zahl
+                console.log('Zahl: ', id, 'State: ', state)
+                if (state == 'firstNumber') {
+                    firstNumber = parseInt(id)
+                    state = 'operation'
+                    ergebnis.innerText = firstNumber
+                }
+                if (state == 'secondNumber') {
+                    console.log('state: seconNumber')
+                    secondNumber = parseInt(id)
+                    state = 'result'
+                    ergebnis.innerText = secondNumber
+                }
+
+            }
+
+
+        })
+
+
+    </script>
 </body>
 
 </html>
